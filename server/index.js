@@ -27,7 +27,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use("/client", clientRoutes);
-
 app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
@@ -40,8 +39,8 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-   //User.insertMany(dataUser);
-    Product.insertMany(dataProduct);
-    ProductStat.insertMany(dataProductStat);
+    //User.insertMany(dataUser);
+    // Product.insertMany(dataProduct);
+    // ProductStat.insertMany(dataProductStat);
   })
   .catch((error) => console.log(`${error} did not connect`));
