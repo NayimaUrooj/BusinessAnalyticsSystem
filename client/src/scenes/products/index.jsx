@@ -1,7 +1,17 @@
 import React, {useState} from 'react';
-import { Box, useMediaQuery, useTheme, Card, CardContent,Typography, Rating, CardActions, Button, Collapse} from "@mui/material";
+import { Box, useMediaQuery, useTheme, Card, CardContent,Typography, Rating, CardActions, Button, Collapse, CircularProgress} from "@mui/material";
 import { useGetProductsQuery } from 'state/api';
 import Header from "components/Header";
+import { keyframes } from "@emotion/react";
+
+const spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
 const Product = ({
   _id,
@@ -126,7 +136,39 @@ const Products = () => {
           )}
         </Box>
       ) : (
-        <>Loading...</>
+      //   <Box
+      //   display="flex"
+      //   justifyContent="center"
+      //   alignItems="center"
+      //   height="50vh"
+      // >
+      //   <CircularProgress />
+      // </Box>
+      <Box
+    display="flex"
+    flexDirection="column"
+    justifyContent="center"
+    alignItems="center"
+    height="100vh"
+  >
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      mb={2}
+      animation={`${spin} 2s linear infinite`}
+    >
+      <CircularProgress />
+      <Box ml={2}>
+        <Typography variant="h6" component="span">
+          Loading
+        </Typography>
+      </Box>
+    </Box>
+    <Typography variant="body2" component="span">
+      Please wait while we load your products...
+    </Typography>
+  </Box>
       )}
     </Box>
   );
