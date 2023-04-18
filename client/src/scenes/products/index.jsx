@@ -85,10 +85,6 @@ return (
   }
 
 
-
-
-
-
 const Products = () => {
   const { data, error, isLoading } = useGetProductsQuery();
   //console.log(data, "dataproduct");
@@ -173,5 +169,6 @@ const Products = () => {
     </Box>
   );
 };
+
 
 export default Products;
