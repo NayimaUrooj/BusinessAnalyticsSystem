@@ -26,7 +26,11 @@ export const api = createApi({
               params: {page, pageSize, sort, search},
             }),
             providesTags: ["Transactions"],
-          })
+          }),
+          getGeography :build.query({
+            query: () => "client/geography",
+            providesTags: ["Geography"],
+          }),
         }),
 });
 
@@ -35,6 +39,7 @@ export const {
     useGetProductsQuery,
     useGetCustomersQuery,
     useGetTransactionsQuery,
+    useGetGeographyQuery,
 } = api;
 
 

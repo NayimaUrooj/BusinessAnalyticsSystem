@@ -3,6 +3,8 @@ import Product from "../models/Product.js";
 import ProductStat from "../models/ProductStat.js";
 import User from "../models/User.js";
 import Transaction from "../models/Transaction.js";
+import getCountryIso3 from "country-iso-2-to-3";
+
 
 export const getProducts = async(req, res) => {
     try {
@@ -85,6 +87,41 @@ export const getTransactions = async (req, res) => {
           transactions,
           total,
         });
+         }
+        
+       catch (error) 
+       {
+         console.error(error); 
+         let message = "An error occurred while fetching the products.";
+         if (error.code === "ENOENT") {
+             message = "The file or directory could not be found.";
+         } else if (error.code === "EACCES") {
+             message = "The file or directory could not be accessed.";
+         }
+          res.status(500).json({ message: message });
+       }
+}
+
+export const getGeography = async (req, res) => {
+
+    try {
+        const users = await User.find();
+
+    const mappedLocations = users.reduce((acc, { country }) => {
+      const countryISO3 = getCountryIso3(country);
+      if (!acc[countryISO3]) {
+        acc[countryISO3] = 0;
+      }
+      acc[countryISO3]++;
+      return acc;
+    }, {});
+
+    const formattedLocations = Object.entries(mappedLocations).map(
+      ([country, count]) => {
+        return { id: country, value: count };
+      }
+    );
+    res.status(200).json(formattedLocations);
          }
         
        catch (error) 

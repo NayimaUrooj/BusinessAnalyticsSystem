@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@emotion/styled": "^11.10.6",
-    "@mui/icons-material": "^5.11.9"
+    "@mui/icons-material": "^5.11.9",
+    "country-iso-2-to-3": "^1.1.0"
   }
 }
