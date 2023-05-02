@@ -22,12 +22,6 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-app.use("/client", clientRoutes);
-app.use("/general", generalRoutes);
-app.use("/management", managementRoutes);
-app.use("/sales", salesRoutes);
-
-
 app.use(helmet());                   
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" })); 
 app.use(morgan("common"));
@@ -50,9 +44,9 @@ mongoose
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
     //User.insertMany(dataUser);
     // Product.insertMany(dataProduct);
-    // ProductStat.insertMany(dataProductStat);
-    //Transaction.insertMany(dataTransaction);
-    //OverallStat.insertMany(dataOverallStat);
+    //  ProductStat.insertMany(dataProductStat);
+    // //Transaction.insertMany(dataTransaction);
+    //  OverallStat.insertMany(dataOverallStat);
 
 
   })
