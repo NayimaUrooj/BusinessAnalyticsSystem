@@ -14,12 +14,20 @@ import {dataUser} from "./data/index.js";
 import Product from "./models/Product.js";
 import ProductStat from "./models/ProductStat.js";
 import {dataProduct} from "./data/index.js";
-import {dataProductStat, dataTransaction} from "./data/index.js";
+import {dataProductStat, dataTransaction, dataOverallStat} from "./data/index.js";
 import Transaction from "./models/Transaction.js";
+import OverallStat from "./models/OverallStat.js";
 
 dotenv.config();
 const app = express();
 app.use(express.json());
+
+app.use("/client", clientRoutes);
+app.use("/general", generalRoutes);
+app.use("/management", managementRoutes);
+app.use("/sales", salesRoutes);
+
+
 app.use(helmet());                   
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" })); 
 app.use(morgan("common"));
@@ -44,6 +52,8 @@ mongoose
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
     //Transaction.insertMany(dataTransaction);
+    //OverallStat.insertMany(dataOverallStat);
+
 
   })
   .catch((error) => console.log(`${error} did not connect`));

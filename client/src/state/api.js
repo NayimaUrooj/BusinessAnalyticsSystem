@@ -4,7 +4,7 @@ export const api = createApi({
 
     baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }),
     reducerPath: "adminApi",
-    tagTypes: ["User", "Product", "Customers", "Transactions"],
+    tagTypes: ["User", "Product", "Customers", "Transactions", "GeoGraphy", "Sales"],
 
     endpoints: (build) => ({
             getUser: build.query({
@@ -31,6 +31,10 @@ export const api = createApi({
             query: () => "client/geography",
             providesTags: ["Geography"],
           }),
+          getSales :build.query({
+            query: () => "sales/sales",
+            providesTags: ["Sales"],
+          }),
         }),
 });
 
@@ -40,6 +44,7 @@ export const {
     useGetCustomersQuery,
     useGetTransactionsQuery,
     useGetGeographyQuery,
+    useGetSalesQuery,
 } = api;
 
 
