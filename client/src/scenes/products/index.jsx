@@ -13,7 +13,7 @@ const spin = keyframes`
   }
 `;
 
-const Product = ({
+const Product =  ({
   _id,
   name,
   description,
@@ -26,6 +26,8 @@ const Product = ({
   const theme = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const yearlySalesTotal = stat.length > 0 ? stat[0].yearlySalesTotal : 0;
+  const yearlyTotalSoldUnits = stat.length > 0 ? stat[0].yearlyTotalSoldUnits : 0;
 return (
   <Card
     sx={{
@@ -61,24 +63,30 @@ return (
         </Button>
       </CardActions>
       <Collapse
-        in={isExpanded}
-        timeout="auto"
-        unmountOnExit
-        sx={{
-          color: theme.palette.neutral[300],
-        }}
-      >
-        <CardContent>
-          <Typography>id: {_id}</Typography>
-          <Typography>Supply Left: {supply}</Typography>
-          <Typography>
-            Yearly Sales This Year: {stat.yearlySalesTotal}
-          </Typography>
-          <Typography>
-            Yearly Units Sold This Year: {stat.yearlyTotalSoldUnits}
-          </Typography>
-        </CardContent>
-      </Collapse>
+  in={isExpanded}
+  timeout="auto"
+  unmountOnExit
+  sx={{
+    color: theme.palette.neutral[300],
+  }}
+>
+<CardContent>
+  <Typography>id: {_id}</Typography>
+  <Typography>Supply Left: {supply}</Typography>
+  {stat ? (
+    <>
+      <Typography>
+        Yearly Sales This Year: {yearlySalesTotal}
+      </Typography>
+      <Typography>
+        Yearly Units Sold This Year: {yearlyTotalSoldUnits}
+      </Typography>
+    </>
+  ) : null}
+</CardContent>
+
+</Collapse>
+
     </Card>
       
 )

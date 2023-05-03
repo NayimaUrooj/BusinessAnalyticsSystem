@@ -44,7 +44,7 @@ mongoose
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
     //User.insertMany(dataUser);
-    // Product.insertMany(dataProduct);
+   //  Product.insertMany(dataProduct);
     //  ProductStat.insertMany(dataProductStat);
     // Transaction.insertMany(dataTransaction);
     //  OverallStat.insertMany(dataOverallStat);
