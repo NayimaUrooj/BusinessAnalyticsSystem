@@ -2,7 +2,10 @@
   "dependencies": {
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.9",
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^5.0.0",
     "country-iso-2-to-3": "^1.1.0",
+    "express-session": "^1.17.3",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0"
   }
