@@ -48,7 +48,7 @@ mongoose
     //  ProductStat.insertMany(dataProductStat);
     // Transaction.insertMany(dataTransaction);
     //  OverallStat.insertMany(dataOverallStat);
-      AffiliateStat.insertMany(dataAffiliateStat);
+    //  AffiliateStat.insertMany(dataAffiliateStat);
 
 
   })
