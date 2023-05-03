@@ -18,13 +18,10 @@ import {dataProductStat, dataTransaction, dataOverallStat} from "./data/index.js
 import Transaction from "./models/Transaction.js";
 import OverallStat from "./models/OverallStat.js";
 
-
 dotenv.config();
 const app = express();
 app.use(express.json());
 
-const passport = require('passport');
-const session = require('express-session');
 app.use(helmet());                   
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" })); 
 app.use(morgan("common"));
@@ -36,16 +33,6 @@ app.use("/client", clientRoutes);
 app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
-
-app.use(session({
-  secret: 'your-secret-key',
-  resave: false,
-  saveUninitialized: false
-}));
-
-// initialize passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
 
 const PORT = process.env.PORT || 9000;
 mongoose
