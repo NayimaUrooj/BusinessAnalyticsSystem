@@ -17,7 +17,7 @@ export const getUser = async (req, res) => {
 
       const currentMonth = "May";
       const currentYear = 2021;
-      const currentDay = "2023-05-15";
+      const currentDay = "2021-05-15";
   
       const transactions = await Transaction.find()
         .limit(50)
@@ -55,3 +55,5 @@ export const getUser = async (req, res) => {
       res.status(404).json({ message: error.message });
     }
   };
+
+  

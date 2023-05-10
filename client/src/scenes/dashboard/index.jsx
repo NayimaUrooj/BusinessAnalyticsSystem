@@ -25,6 +25,7 @@ const Dashboard = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
   const { data, isLoading } = useGetDashboardQuery();
+  console.log(data);
 
   const columns = [
     {
@@ -90,7 +91,7 @@ const Dashboard = () => {
    <StatBox
   title="Sales Today"
   value={data && data.todayStats && data.todayStats.totalSales}
-  increase="+21%"
+ // increase="+21%"
   description="Since last month"
   icon={
     <PointOfSale
