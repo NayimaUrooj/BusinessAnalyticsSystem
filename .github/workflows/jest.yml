@@ -1,14 +1,14 @@
-name: Jest Tests
+name: Jest Tests and Prettier
 
 on:
-    push:
-      branches:
-        - main
-        - master
-    pull_request:
-        branches:
-            - main
-            - master  
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
 
 jobs:
   build-and-test:
@@ -28,3 +28,6 @@ jobs:
 
       - name: Run Jest tests
         run: npm test
+
+      - name: Check code formatting with Prettier
+        run: prettier --check .
