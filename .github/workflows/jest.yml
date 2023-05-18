@@ -30,4 +30,5 @@ jobs:
         run: npm test
 
       - name: Check code formatting with Prettier
-        run: prettier --check .
+        run: node_modules/.bin/prettier --check .
+    
