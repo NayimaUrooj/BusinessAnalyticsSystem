@@ -1,4 +1,3 @@
-
 import globalReducer, { setMode } from './index';
 
 describe('global reducer', () => {

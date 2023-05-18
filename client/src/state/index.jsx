@@ -1,10 +1,7 @@
-import React from 'react' //rafce
-
+import React from 'react'; //rafce
 
 const Dashboard = () => {
-  return (
-    <div>Dashboard</div>
-  )
-}
+  return <div>Dashboard</div>;
+};
 
-export default Dashboard
+export default Dashboard;

@@ -1,9 +1,9 @@
-import React from "react";
-import { Box, useTheme } from "@mui/material";
-import { useGetGeographyQuery } from "state/api";
-import Header from "components/Header";
-import { ResponsiveChoropleth } from "@nivo/geo";
-import { geoData } from "state/geoData";
+import React from 'react';
+import { Box, useTheme } from '@mui/material';
+import { useGetGeographyQuery } from 'state/api';
+import Header from 'components/Header';
+import { ResponsiveChoropleth } from '@nivo/geo';
+import { geoData } from 'state/geoData';
 
 const Geography = () => {
   const theme = useTheme();
@@ -67,21 +67,21 @@ const Geography = () => {
             borderColor="#ffffff"
             legends={[
               {
-                anchor: "bottom-right",
-                direction: "column",
+                anchor: 'bottom-right',
+                direction: 'column',
                 justify: true,
                 translateX: 0,
                 translateY: -125,
                 itemsSpacing: 0,
                 itemWidth: 94,
                 itemHeight: 18,
-                itemDirection: "left-to-right",
+                itemDirection: 'left-to-right',
                 itemTextColor: theme.palette.secondary[200],
                 itemOpacity: 0.85,
                 symbolSize: 18,
                 effects: [
                   {
-                    on: "hover",
+                    on: 'hover',
                     style: {
                       itemTextColor: theme.palette.background.alt,
                       itemOpacity: 1,

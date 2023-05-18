@@ -1,13 +1,13 @@
-import React from "react";
-import { ResponsivePie } from "@nivo/pie";
-import { Box, Typography, useTheme } from "@mui/material";
-import { useGetSalesQuery } from "state/api";
+import React from 'react';
+import { ResponsivePie } from '@nivo/pie';
+import { Box, Typography, useTheme } from '@mui/material';
+import { useGetSalesQuery } from 'state/api';
 
 const BreakdownChart = ({ isDashboard = false }) => {
   const { data, isLoading } = useGetSalesQuery();
   const theme = useTheme();
 
-  if (!data || isLoading) return "Loading...";
+  if (!data || isLoading) return 'Loading...';
 
   const colors = [
     theme.palette.secondary[500],
@@ -26,10 +26,10 @@ const BreakdownChart = ({ isDashboard = false }) => {
 
   return (
     <Box
-      height={isDashboard ? "400px" : "100%"}
+      height={isDashboard ? '400px' : '100%'}
       width={undefined}
-      minHeight={isDashboard ? "325px" : undefined}
-      minWidth={isDashboard ? "325px" : undefined}
+      minHeight={isDashboard ? '325px' : undefined}
+      minWidth={isDashboard ? '325px' : undefined}
       position="relative"
     >
       <ResponsivePie
@@ -67,7 +67,7 @@ const BreakdownChart = ({ isDashboard = false }) => {
             },
           },
         }}
-        colors={{ datum: "data.color" }}
+        colors={{ datum: 'data.color' }}
         margin={
           isDashboard
             ? { top: 40, right: 80, bottom: 100, left: 50 }
@@ -78,36 +78,36 @@ const BreakdownChart = ({ isDashboard = false }) => {
         activeOuterRadiusOffset={8}
         borderWidth={1}
         borderColor={{
-          from: "color",
-          modifiers: [["darker", 0.2]],
+          from: 'color',
+          modifiers: [['darker', 0.2]],
         }}
         enableArcLinkLabels={!isDashboard}
         arcLinkLabelsTextColor={theme.palette.secondary[200]}
         arcLinkLabelsThickness={2}
-        arcLinkLabelsColor={{ from: "color" }}
+        arcLinkLabelsColor={{ from: 'color' }}
         arcLabelsSkipAngle={10}
         arcLabelsTextColor={{
-          from: "color",
-          modifiers: [["darker", 2]],
+          from: 'color',
+          modifiers: [['darker', 2]],
         }}
         legends={[
           {
-            anchor: "bottom",
-            direction: "row",
+            anchor: 'bottom',
+            direction: 'row',
             justify: false,
             translateX: isDashboard ? 20 : 0,
             translateY: isDashboard ? 50 : 56,
             itemsSpacing: 0,
             itemWidth: 85,
             itemHeight: 18,
-            itemTextColor: "#999",
-            itemDirection: "left-to-right",
+            itemTextColor: '#999',
+            itemDirection: 'left-to-right',
             itemOpacity: 1,
             symbolSize: 18,
-            symbolShape: "circle",
+            symbolShape: 'circle',
             effects: [
               {
-                on: "hover",
+                on: 'hover',
                 style: {
                   itemTextColor: theme.palette.primary[500],
                 },
@@ -125,12 +125,12 @@ const BreakdownChart = ({ isDashboard = false }) => {
         pointerEvents="none"
         sx={{
           transform: isDashboard
-            ? "translate(-75%, -170%)"
-            : "translate(-50%, -100%)",
+            ? 'translate(-75%, -170%)'
+            : 'translate(-50%, -100%)',
         }}
       >
         <Typography variant="h6">
-          {!isDashboard && "Total:"} ${data.yearlySalesTotal}
+          {!isDashboard && 'Total:'} ${data.yearlySalesTotal}
         </Typography>
       </Box>
     </Box>

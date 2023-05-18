@@ -1,8 +1,8 @@
-import React, { useMemo } from "react";
-import { Box, useTheme } from "@mui/material";
-import Header from "components/Header";
-import { ResponsiveLine } from "@nivo/line";
-import { useGetSalesQuery } from "state/api";
+import React, { useMemo } from 'react';
+import { Box, useTheme } from '@mui/material';
+import Header from 'components/Header';
+import { ResponsiveLine } from '@nivo/line';
+import { useGetSalesQuery } from 'state/api';
 
 const Monthly = () => {
   const { data } = useGetSalesQuery();
@@ -13,12 +13,12 @@ const Monthly = () => {
 
     const { monthlyData } = data;
     const totalSalesLine = {
-      id: "totalSales",
+      id: 'totalSales',
       color: theme.palette.secondary.main,
       data: [],
     };
     const totalUnitsLine = {
-      id: "totalUnits",
+      id: 'totalUnits',
       color: theme.palette.secondary[600],
       data: [],
     };
@@ -78,13 +78,13 @@ const Monthly = () => {
                 },
               },
             }}
-            colors={{ datum: "color" }}
+            colors={{ datum: 'color' }}
             margin={{ top: 50, right: 50, bottom: 70, left: 60 }}
-            xScale={{ type: "point" }}
+            xScale={{ type: 'point' }}
             yScale={{
-              type: "linear",
-              min: "auto",
-              max: "auto",
+              type: 'linear',
+              min: 'auto',
+              max: 'auto',
               stacked: false,
               reverse: false,
             }}
@@ -93,51 +93,51 @@ const Monthly = () => {
             axisTop={null}
             axisRight={null}
             axisBottom={{
-              orient: "bottom",
+              orient: 'bottom',
               tickSize: 5,
               tickPadding: 5,
               tickRotation: 90,
-              legend: "Month",
+              legend: 'Month',
               legendOffset: 60,
-              legendPosition: "middle",
+              legendPosition: 'middle',
             }}
             axisLeft={{
-              orient: "left",
+              orient: 'left',
               tickSize: 5,
               tickPadding: 5,
               tickRotation: 0,
-              legend: "Total",
+              legend: 'Total',
               legendOffset: -50,
-              legendPosition: "middle",
+              legendPosition: 'middle',
             }}
             enableGridX={false}
             enableGridY={false}
             pointSize={10}
-            pointColor={{ theme: "background" }}
+            pointColor={{ theme: 'background' }}
             pointBorderWidth={2}
-            pointBorderColor={{ from: "serieColor" }}
+            pointBorderColor={{ from: 'serieColor' }}
             pointLabelYOffset={-12}
             useMesh={true}
             legends={[
               {
-                anchor: "top-right",
-                direction: "column",
+                anchor: 'top-right',
+                direction: 'column',
                 justify: false,
                 translateX: 50,
                 translateY: 0,
                 itemsSpacing: 0,
-                itemDirection: "left-to-right",
+                itemDirection: 'left-to-right',
                 itemWidth: 80,
                 itemHeight: 20,
                 itemOpacity: 0.75,
                 symbolSize: 12,
-                symbolShape: "circle",
-                symbolBorderColor: "rgba(0, 0, 0, .5)",
+                symbolShape: 'circle',
+                symbolBorderColor: 'rgba(0, 0, 0, .5)',
                 effects: [
                   {
-                    on: "hover",
+                    on: 'hover',
                     style: {
-                      itemBackground: "rgba(0, 0, 0, .03)",
+                      itemBackground: 'rgba(0, 0, 0, .03)',
                       itemOpacity: 1,
                     },
                   },
