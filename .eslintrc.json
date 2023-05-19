@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "lint": "eslint ."
+  },
   "env": {
     "browser": true,
     "es6": true
@@ -17,9 +20,7 @@
       "version": "detect"
     }
   },
-  "scripts": {
-    "lint": "eslint ."
-  },
+  
   "rules": {
     "no-unused-expressions": "off",
     "no-sequences": "off",
