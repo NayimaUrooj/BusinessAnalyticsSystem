@@ -20,7 +20,7 @@
       "version": "detect"
     }
   },
-  
+
   "rules": {
     "no-unused-expressions": "off",
     "no-sequences": "off",
