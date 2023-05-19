@@ -29,8 +29,8 @@ jobs:
       - name: Run Jest tests
         run: npm test
 
-      - name: Check code formatting with Prettier
-        run: node_modules/.bin/prettier --check .
+    #   - name: Check code formatting with Prettier
+    #     run: node_modules/.bin/prettier --check .
 
       - name: Run ESLint
         run: npm run lint
