@@ -34,3 +34,11 @@ jobs:
 
       - name: Run ESLint
         run: npx lint
+
+      - name: Deploy to Render.com
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer $RENDER_API_KEY" \
+            https://api.render.com/v1/services/twelve-frontend/deployments
