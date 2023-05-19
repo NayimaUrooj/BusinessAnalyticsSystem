@@ -32,21 +32,5 @@ jobs:
       - name: Check code formatting with Prettier
         run: node_modules/.bin/prettier --check .
 
-      #   - name: Run ESLint
-      #     run: npm run lint
-
-      - name: Deploy backend to Render.com
-        env:
-          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
-        run: |
-          curl -X POST \
-            -H "Authorization: Bearer $RENDER_API_KEY" \
-            https://api.render.com/v1/services/twelve-backend/deployments
-
-      - name: Deploy frontend to Render.com
-        env:
-          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
-        run: |
-          curl -X POST \
-            -H "Authorization: Bearer $RENDER_API_KEY" \
-            https://api.render.com/v1/services/twelve-frontend/deployments
+      - name: Run ESLint
+        run: npm run lint
