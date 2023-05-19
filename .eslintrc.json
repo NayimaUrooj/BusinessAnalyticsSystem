@@ -17,9 +17,9 @@
       "version": "detect"
     }
   },
-    "scripts": {
-      "lint": "eslint ."
-    },
+  "scripts": {
+    "lint": "eslint ."
+  },
   "rules": {
     "no-unused-expressions": "off",
     "no-sequences": "off",
