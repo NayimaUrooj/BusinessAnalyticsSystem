@@ -1,3 +1,4 @@
+/* global process */
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
@@ -9,20 +10,20 @@ import clientRoutes from './routes/client.js';
 import generalRoutes from './routes/general.js';
 import managementRoutes from './routes/management.js';
 import salesRoutes from './routes/sales.js';
-import User from './models/User.js';
-import { dataUser } from './data/index.js';
-import Product from './models/Product.js';
-import ProductStat from './models/ProductStat.js';
-import { dataProduct } from './data/index.js';
-import {
-  dataProductStat,
-  dataTransaction,
-  dataOverallStat,
-  dataAffiliateStat,
-} from './data/index.js';
-import Transaction from './models/Transaction.js';
-import OverallStat from './models/OverallStat.js';
-import AffiliateStat from './models/AffliateStat.js';
+// import User from './models/User.js';
+// import { dataUser } from './data/index.js';
+// import Product from './models/Product.js';
+// import ProductStat from './models/ProductStat.js';
+// import { dataProduct } from './data/index.js';
+// import {
+//   dataProductStat,
+//   dataTransaction,
+//   dataOverallStat,
+//   dataAffiliateStat,
+// } from './data/index.js';
+// import Transaction from './models/Transaction.js';
+// import OverallStat from './models/OverallStat.js';
+// import AffiliateStat from './models/AffliateStat.js';
 
 dotenv.config();
 const app = express();

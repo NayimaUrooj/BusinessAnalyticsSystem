@@ -1,4 +1,6 @@
-import { Password } from '@mui/icons-material';
+/* eslint-disable no-constant-condition */
+/* eslint-disable no-extra-boolean-cast */
+
 import Product from '../models/Product.js';
 import ProductStat from '../models/ProductStat.js';
 import User from '../models/User.js';
@@ -51,7 +53,6 @@ export const getTransactions = async (req, res) => {
       const sortFormatted = {
         [sortParsed.field]: (sortParsed.sort = 'asc' ? 1 : -1),
       };
-
       return sortFormatted;
     };
     const sortFormatted = Boolean(sort) ? generateSort() : {};
