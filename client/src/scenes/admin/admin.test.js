@@ -2,8 +2,8 @@ import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from '@mui/material/styles';
 import { createTheme } from '@mui/system';
 import React from 'react';
-import { useGetAdminsQuery } from '../../../src/state/api';
-import { DataGrid } from '@mui/x-data-grid';
+// import { useGetAdminsQuery } from '../../../src/state/api';
+// import { DataGrid } from '@mui/x-data-grid';
 import Admin from './index';
 
 // Mocking the useGetAdminsQuery function
