@@ -1,1 +1,4 @@
-export const presets = ['react-app'];
+module.exports = {
+    presets: ['react-app'],
+  };
+  
