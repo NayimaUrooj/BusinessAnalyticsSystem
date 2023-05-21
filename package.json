@@ -23,6 +23,7 @@
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^18.2.0",
     "react-redux": "^7.2.4",
+    "react-router-dom": "^6.11.2",
     "redux": "^4.2.1",
     "theme": "^0.1.0"
   },
@@ -75,7 +76,8 @@
     ],
     "transformIgnorePatterns": [
       "/node_modules/(?!d3-color)/",
-      "^.+\\.css$"
+      "^.+\\.css$",
+      "\\.p?jpeg$"
     ]
   }
 }
