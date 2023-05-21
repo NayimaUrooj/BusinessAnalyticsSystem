@@ -1,4 +1,3 @@
-
 import { configureStore } from '@reduxjs/toolkit';
 // Rest of your test code
 import globalReducer from './state';

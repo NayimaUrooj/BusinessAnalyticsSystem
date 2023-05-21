@@ -1,10 +1,9 @@
 {
-    "compilerOptions": {
-      "baseUrl": "src",
-      "paths": {
-        "state/*": ["./src/state/*"]
-      }
-    },
-    "include": ["src"]
-  }
-  
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "state/*": ["./src/state/*"]
+    }
+  },
+  "include": ["src"]
+}
