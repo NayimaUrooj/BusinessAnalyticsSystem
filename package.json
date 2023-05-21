@@ -16,6 +16,7 @@
     "react": "^18.2.0",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^18.2.0",
+    "react-redux": "^7.2.4",
     "redux": "^4.2.1"
   },
   "devDependencies": {
