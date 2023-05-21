@@ -1,4 +1,4 @@
-name: Jest Tests and Prettier
+name: CI
 
 on:
   push:
@@ -30,7 +30,9 @@ jobs:
         run: npm test
 
       - name: Check code formatting with Prettier
-        run: node_modules/.bin/prettier --check .
+        run: npx prettier --check .
 
       - name: Run ESLint
-        run: npx lint
+        env:
+          NODE_ENV: test  # Set NODE_ENV to 'test'
+        run: npx eslint .
