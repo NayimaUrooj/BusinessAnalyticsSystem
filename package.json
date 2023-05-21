@@ -6,6 +6,7 @@
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.13.1",
     "@mui/system": "^5.13.1",
+    "@mui/x-data-grid": "^6.5.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/react-hooks": "^8.0.1",
     "bcryptjs": "^2.4.3",
