@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, useTheme } from '@mui/material';
+import Header from 'components/Header';
 import { useGetAdminsQuery } from 'state/api';
 import { DataGrid } from '@mui/x-data-grid';
-import Header from 'components/Header';
 import CustomColumnMenu from 'components/DataGridCustomColumnMenu';
 
 export const Admin = () => {

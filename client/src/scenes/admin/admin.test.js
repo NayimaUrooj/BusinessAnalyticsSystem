@@ -1,18 +1,14 @@
-
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from '@mui/material/styles';
 import { createTheme } from '@mui/system';
-import { mount } from 'enzyme';
 import React from 'react';
-import { useGetAdminsQuery } from 'state/api';
+import { useGetAdminsQuery } from '../../../src/state/api';
 import { DataGrid } from '@mui/x-data-grid';
 import Admin from './index';
-import Adapter from 'enzyme-adapter-react-15';
-import Enzyme from 'enzyme';
 
-Enzyme.configure({ adapter: new Adapter() });
-
-jest.mock('state/api', () => ({
+// Mocking the useGetAdminsQuery function
+jest.mock('../../../src/state/api', () => ({
+  ...jest.requireActual('../../../src/state/api'),
   useGetAdminsQuery: jest.fn(),
 }));
 
@@ -21,16 +17,17 @@ describe('Admin Component', () => {
 
   beforeEach(() => {
     container = document.createElement('div');
+    document.body.appendChild(container);
   });
 
   afterEach(() => {
-    container.remove();
+    document.body.removeChild(container);
     container = null;
   });
 
   it('renders without crashing', () => {
     createRoot(container).render(
-      <ThemeProvider theme={{}}>
+      <ThemeProvider theme={createTheme()}>
         <Admin />
       </ThemeProvider>
     );
