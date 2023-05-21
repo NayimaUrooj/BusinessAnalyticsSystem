@@ -13,14 +13,17 @@
     "connect-mongo": "^5.0.0",
     "country-iso-2-to-3": "^1.1.0",
     "express-session": "^1.17.3",
+    "history": "^5.3.0",
     "msw": "^1.2.1",
+    "npm": "^9.6.7",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "react": "^18.2.0",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^18.2.0",
     "react-redux": "^7.2.4",
-    "redux": "^4.2.1"
+    "redux": "^4.2.1",
+    "theme": "^0.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
@@ -39,6 +42,7 @@
     "enzyme-adapter-utils": "^1.14.1",
     "eslint": "^8.40.0",
     "eslint-plugin-react": "^7.32.2",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "prettier": "^2.8.8",
@@ -55,7 +59,21 @@
     },
     "moduleNameMapper": {
       "^components/(.*)$": "<rootDir>/client/src/components/$1",
-      "^state/(.*)$": "<rootDir>/client/src/state/$1"
-    }
+      "^state/(.*)$": "<rootDir>/client/src/state/$1",
+      "^scenes/(.*)$": "<rootDir>/client/src/scenes/$1",
+      "^assets/(.*)$": "<rootDir>/client/src/assets/$1",
+      "\\.(css|less|sass|scss)$": "<rootDir>/client/src/__mocks__/styleMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|svg|ttf|woff|woff2)$": "<rootDir>/client/src/__mocks__/fileMock.js"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "node",
+      "jpeg"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!d3-color)/"
+    ]
   }
 }

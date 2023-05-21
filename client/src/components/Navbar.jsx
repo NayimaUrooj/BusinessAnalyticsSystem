@@ -9,7 +9,7 @@ import {
 } from '@mui/icons-material';
 import FlexBetween from 'components/FlexBetween';
 import { useDispatch } from 'react-redux';
-import { setMode } from 'state';
+import { setMode } from '../state';
 import profileImage from 'assets/profile.jpeg';
 import Sidebar from './Sidebar';
 
