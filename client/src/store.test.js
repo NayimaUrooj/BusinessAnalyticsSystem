@@ -1,4 +1,6 @@
+
 import { configureStore } from '@reduxjs/toolkit';
+// Rest of your test code
 import globalReducer from './state';
 import { api } from './state/api';
 test('store configuration', () => {
