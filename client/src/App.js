@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Navigate } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
-import { themeSettings } from "./theme";
+import { themeSettings } from '../src/theme';
 import Layout from 'scenes/layout';
 import Dashboard from 'scenes/dashboard';
 import Products from 'scenes/products';
@@ -16,6 +16,7 @@ import Daily from 'scenes/daily';
 import Monthly from 'scenes/monthly';
 import Breakdown from 'scenes/breakdown';
 import Admin from 'scenes/admin';
+import React from 'react';
 import Performance from 'scenes/performance';
 
 function App() {
@@ -40,7 +41,10 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />
               <Route path="/transactions" element={<Transactions />} />
-              <Route path="/geography" element={<Geography />} />
+              <Route
+                path="/geography"
+                element={<Geography data-testid="geography-component" />}
+              />
               <Route path="/overview" element={<Overview />} />
               <Route path="/daily" element={<Daily />} />
               <Route path="/monthly" element={<Monthly />} />

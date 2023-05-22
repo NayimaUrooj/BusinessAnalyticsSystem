@@ -17,6 +17,7 @@ const Geography = () => {
         height="75vh"
         border={`1px solid ${theme.palette.secondary[200]}`}
         borderRadius="4px"
+        data-testid="geography-component"
       >
         {data ? (
           <ResponsiveChoropleth
